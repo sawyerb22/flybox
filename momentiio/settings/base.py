@@ -36,9 +36,13 @@ PROJECT_APPS = (
     'address',
     'api',
     'core',
+    'fly_box',
+    'fly',
+    'fish',
     'friendship',
     'interests',
     'invites',
+    'river',
     'social',
     'system',
     'user'

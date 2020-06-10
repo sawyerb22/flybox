@@ -43,7 +43,11 @@ class Image(models.Model):
     image = models.ImageField(upload_to=image_path_generator,
                               height_field="image_height", width_field="image_width")
     post = models.ForeignKey(
-        Post, related_name="post_images", null=True, on_delete=models.SET_NULL)
+        Post, related_name="post_images", null=True, blank=True, on_delete=models.CASCADE)
+    fish = models.ForeignKey(
+        'fish.Fish', related_name="fish_image", null=True, blank=True, on_delete=models.SET_NULL)
+    hole = models.ForeignKey("river.Hole", null=True,
+                             blank=True, on_delete=models.CASCADE)
     user = models.ForeignKey(
         get_user_model(), related_name='user_images', on_delete=models.CASCADE)
     uploaded_at = models.DateTimeField(auto_now_add=True)
