@@ -4,6 +4,7 @@ from graphene import List, Schema, ObjectType, NonNull, ID
 from graphene_django import DjangoObjectType
 from address.graphql.mutation import UpdateAddressMutation
 from address.graphql.query import CountryQuery
+from fish.graphql.query import GetAllFishQuery, GetUniqueFishQuery, GetHoleFishQuery
 from interests.graphql.query import InterestListQuery, GetInterests
 from invites.graphql.mutation import CreateInviteMutation, UpdateInviteMutation, DeleteInviteMutation, ClaimInviteMutation, CreateUserFromInviteMutation
 from social.graphql.query import PostsQuery, FeedQuery, GetPostQuery, GetPostCommentsQuery, GetPostLikesQuery
@@ -15,6 +16,9 @@ from user.graphql.mutation import LoginUserMutation, LogoutUserMutation, UpdateL
 
 
 class Query(
+    GetAllFishQuery,
+    GetUniqueFishQuery,
+    GetHoleFishQuery,
     CountryQuery,
     GetAuthUserQuery,
     GetAuthUserImages,

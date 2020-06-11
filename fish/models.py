@@ -23,7 +23,7 @@ FISH_SPECIES = (
 
 
 class Fish(models.Model):
-    type = models.CharField(
+    species = models.CharField(
         choices=FISH_SPECIES, default=RAINBOW_TROUT, max_length=50)
     length = models.CharField(max_length=100)
     weight = models.CharField(max_length=100)
